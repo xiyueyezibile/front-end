@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>轮播图</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .carouseMapRoot {
+      width: 800px;
+      height: 600px;
+      background-color: #bfa;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    .carouseMapRoot ul {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      overflow: hidden;
+    }
+    .carouseMapRoot img {
+      width: 800px;
+      height: 600px;
+    }
+    li {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      list-style-type: none;
+      opacity: 0;
+      transition:opacity .5s;
+    }
+    .carouseMapLI-select {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="carouseMapRoot">
+    <ul>
+      <li>
+        <img src="./png1.png" / >
+      </li>
+      <li>
+        <img src="./png2.png" / >
+      </li>
+      <li>
+        <img src="./png3.png" / >
+      </li>
+      <li>
+        <img src="./png4.png" / >
+      </li>
+    </ul>
+    <button class="previous">left</button>
+    <button class="next">right</button>
+  </div>
+  <script>
+    //防抖高级函数
+    function AntiShake (fn,time = 50) {
+      let timer = null
+      return function (...args) {
+        clearTimeout(timer)
+        timer = setTimeout(()=>{
+          console.log(...args);
+          fn.apply(this,args)
+        },time)
+      }
+    }
+
+    class CarouseMap {
+      constructor(rootUL) {
+        const root = document.getElementsByClassName(rootUL)[0].getElementsByTagName('ul')[0]
+        const li = Array.from(root.getElementsByTagName('li'))
+        //记录当前图片
+        let currentIMG
+        let timer
+        this.init = (i) => {
+          li[i].className = 'carouseMapLI-select'
+          currentIMG = i
+        }
+        this.start = (time = 2000) => {
+          timer = setInterval(()=>{
+            li[currentIMG].className = ''
+          currentIMG++
+          if(currentIMG == li.length) {
+            currentIMG = 0
+          }
+          li[currentIMG].className = 'carouseMapLI-select'
+          },time)
+        }
+        this.next = () => {
+          this.stop()
+          li[currentIMG].className = ''
+          currentIMG++
+          if(currentIMG == li.length) {
+            currentIMG = 0
+          }
+          li[currentIMG].className = 'carouseMapLI-select'
+          this.start()
+        }
+        this.previous = () => {
+          this.stop()
+          li[currentIMG].className = ''
+          currentIMG--
+          if(currentIMG == -1) {
+            currentIMG = li.length - 1
+          }
+          li[currentIMG].className = 'carouseMapLI-select'
+          this.start()
+        }
+        this.stop = () => {
+          clearInterval(timer)
+        }
+      }
+    }
+    const previous = document.getElementsByClassName('previous')[0]
+    // console.log(previous);
+    const next = document.getElementsByClassName('next')[0]
+    const carouseMap = new CarouseMap('carouseMapRoot')
+    carouseMap.init(1)
+    carouseMap.start(3000)
+    previous.addEventListener('click',AntiShake((e)=>{
+      e.preventDefault()
+      carouseMap.previous()
+    },500))
+    next.addEventListener('click',AntiShake(()=>{
+      carouseMap.next()
+    },500))
+  </script>
+</body>
+</html>

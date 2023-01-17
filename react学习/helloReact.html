@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>helloReact</title>
+</head>
+<body>
+  <div id="root"></div>
+  <!-- 引入react核心库 -->
+  <script src="script/react.development.js"></script>
+  <script src="script/react-dom.development.js"></script>
+  <script>
+    // React用来代替dom的
+    // 原生JS通过dom向页面添加div
+    // const div = document.createElement('div')
+    // div.innerHTML = '我是一个div'
+    // const root = document.getElementById('root')
+    // root.appendChild(div)
+
+    //注意：React元素一旦创建就无法修改，只能通过新创建的元素进行替换
+    //React会进行比对，替换只会替换不同的部分
+    //通过React向页面中添加一个div
+    const div = React.createElement('div',{id:'btn',
+                                            className:'qwe',
+                                            onClick:()=>{alert('你点我干嘛')}},'我是react创建的div')//创建一个React元素
+    //获取根元素对应的react元素
+    //ReactDOM.createRoot()用来创建根元素，需要一个dom元素作为参数
+    const root = ReactDOM.createRoot(document.getElementById('root'))
+    //将div渲染到根元素中
+    root.render(div)
+  </script>
+</body>
+</html>

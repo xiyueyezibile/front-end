@@ -1,0 +1,10 @@
+/* 设置基本样式 */
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #dfdfdf;
+  margin: 0;
+}
+
+

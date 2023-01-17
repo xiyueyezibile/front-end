@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>编辑</title>
+  <style>
+    .txtedit {
+      padding: 10px;
+    }
+    .bold-span {
+      font-weight: bold;
+    }
+    .nobold-span {
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+  <div class="nobold-span">
+    <span class="bold-span">1231231231</span>
+  </div>
+  <button>加粗</button>
+  <button>下划线</button>
+  <div class="logo">编程</div>
+  <div class="txtedit" contenteditable="true">
+    这里可以编辑
+  </div>
+  <script>
+    const btn = document.querySelectorAll('button')[0]
+    const btn1 = document.querySelectorAll('button')[1]
+    const txt = document.querySelector('.txtedit')
+    let flag = 1
+    btn1.addEventListener('click',()=>{
+      if(flag) {
+        const selection = window.getSelection().getRangeAt(0);
+const selectedText = selection.extractContents();
+const ins = document.createElement("ins");
+ins.appendChild(selectedText);
+selection.insertNode(ins);
+flag = 0
+      } else {
+        console.log('进来了');
+        flag = 1
+        const selection = window.getSelection().getRangeAt(0);
+        window.getSelection().removeAllRanges()
+        // const selectedText = selection.cloneContents()
+        // console.log(selectedText);
+        // selection.deleteContents()
+        // const span = document.createElement("span");
+        // span.appendChild(selectedText);
+        // selection.insertNode(span);
+      }
+    })
+
+    btn.addEventListener('click',()=>{
+      if(flag) {
+        addBold()
+        flag = 0
+      }
+      else {
+        flag = 1
+        const selection = window.getSelection().getRangeAt(0);
+console.log(selection);
+const selectedText = selection.extractContents();
+const span = document.createElement("span");
+span.classList = "nobold-span";
+span.appendChild(selectedText);
+selection.insertNode(span);
+      }
+    })
+    txt.addEventListener('select',()=>{
+      console.log('被选中了');
+    })
+    function addBold(){
+const selection = window.getSelection().getRangeAt(0);
+console.log(selection);
+const selectedText = selection.extractContents();
+const span = document.createElement("span");
+span.classList = "bold-span";
+span.appendChild(selectedText);
+selection.insertNode(span);
+};
+  </script>
+</body>
+</html>

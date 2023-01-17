@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">点我一下</button>
+  <script>
+   const btn = document.querySelector("#btn")
+   btn.onclick = () => {
+    //终止请求
+    const controller = new AbortController()
+    setTimeout(()=>{
+      controller.abort()
+    },3000)
+    
+    fetch("http://localhost:3000/test",{
+      signal:controller.signal
+    }).then((res)=>{
+    console.log(res);
+   }).catch(()=>{
+    console.log("出错了");
+   })
+   }
+  </script>
+</body>
+</html>

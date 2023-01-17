@@ -1,0 +1,31 @@
+.item {
+  display: flex;
+  padding: 6px;
+  background-color: #fcbf49;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin: 16px 0;
+}
+.content {
+  flex:auto;
+  text-align: center;
+  font-weight: bold;
+}
+.desc {
+  font-size: 16px;
+  color: #194b49;
+}
+.time {
+  color: #d62828;
+}
+.delete {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.delete:hover {
+  color: #d62828;
+  transform: rotate(1turn);
+}

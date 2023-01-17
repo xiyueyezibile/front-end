@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表单标签学习</title>
+</head>
+<body>
+  <!-- action指定表单提交的地址 -->
+  <!-- method指定表单提交的方法 -->
+  <!-- name指定表单的名字 -->
+  <form action="" method="" name="">
+    <!-- 定义单行输入字段，用户可输入文本，默认宽度为20个字符 -->
+    文本框：<input type="text">
+    <br>
+    <!-- 定义密码字段，该段字符被掩码 -->
+    密码框：<input type="password">
+    <br>
+    <!-- 定义图像形式的提交按钮，会把表单数据发送到服务器 -->
+    图像提交按钮：<input type="image" src="https://img2.baidu.com/it/u=1395980100,2999837177&fm=253&fmt=auto&app=120&f=JPEG?w=1200&h=675" width="50" height="50">
+    <!-- 定义单选按钮，name相同的当中选 -->
+    单选框：<input type="radio" name="1">
+            <input type="radio" name="1">
+    <br>
+    <!-- 定义重置按钮，重置会清除表单所有数据 -->
+    重置按钮：<input type="reset">
+    <br>
+    <!-- 定义提交按钮，会把表单数据发送到服务器 -->
+    提交按钮：<input type="submit">
+    <br>
+    <!-- 定义复选框 -->
+    复选框：<input type="checkbox">
+            <input type="checkbox">
+            <input type="checkbox">
+    <br>
+    <!-- 定义输入字段和“浏览”按钮，供文件上传 -->
+    文件上传：<input type="file">
+    <br>
+    <!-- 定义隐藏的输入字段 -->
+    隐藏：<input type="hidden">
+    <br>
+    <!-- 定义可点击按钮（通常和js搭配使用） -->
+    可点击按钮：<input type="button" value="111">
+    <br>
+    <!-- 注：表单中定义的按钮会自动认为是提交按钮会提交表单数据 -->
+    普通按钮：<button>222</button>
+    <br>
+    <!-- 必须输入email类型 -->
+    邮箱：<input type="email">
+    <br>
+    <!-- 必须输入URL类型 -->
+    网址：<input type="url">
+    <br>
+    <!-- 必须输入日期类型 -->
+    日期：<input type="date">
+    <br>
+    <!-- 必须输入时间类型 -->
+    时间：<input type="time">
+    <br>
+    <!-- 必须输入月类型 -->
+    月：<input type="month">
+    <br>
+    <!-- 必须输入周类型 -->
+    周：<input type="week">
+    <br>
+    <!-- 必须输入数字类型 -->
+    数字：<input type="number">
+    <br>
+    手机号：<input type="tel">
+    <br>
+    搜索框：<input type="search">
+    <br>
+    <!-- 生成一个颜色选择表单 -->
+    颜色选择：<input type="color">
+    <br>
+    表单域：<textarea rows="3" cols="20"></textarea>
+  </form>
+</body>
+</html>
