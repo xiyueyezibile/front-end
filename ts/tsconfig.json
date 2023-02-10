@@ -5,7 +5,7 @@
   //include 指定哪些ts文件需要被编译
   //**任意目录 *任意文件
   "include": [
-    "./**/*"
+    "./*"
   ],
   //exclude 指定哪些ts文件不需要被编译
   // "exclude": [
@@ -17,7 +17,7 @@
   */
   "compilerOptions": {
     //target 用来指定ts被编译为js的版本
-    "target": "ESNext",
+    "target": "ES2022",
     //module 指定要使用的模块化规范
     "module": "CommonJS",
     //lib 指定要使用的库

@@ -1,0 +1,86 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  font-size: 14px;
+  text-shadow: 0 0 1px #121212;
+}
+.loginbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+}
+.title {
+  margin-top: 80px;
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: grey;
+  text-shadow: 0 0 1px #bfa;
+}
+.username {
+  padding: 2px;
+  border: 0;
+  border-radius: 4px;
+}
+.username:focus {
+  border: 1px solid rgb(110, 110, 234);
+}
+.img {
+  margin-bottom: 20px;
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.form {
+  width: 210px;
+  height: 30px;
+}
+.goto {
+  cursor: pointer;
+  color: rgb(102, 102, 240);
+  margin-bottom: 20px;
+}
+.goto:hover {
+  color: blue;
+}
+.btn {
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 4px;
+  text-shadow: 0 0 1px #121212;
+}
+.btn:hover {
+  background-color: rgb(229, 221, 221);
+}
+.message {
+  margin-top: 20px;
+  width: 210px;
+  height: 210px;
+  display: flex;
+  justify-content: center;
+}
+.text {
+  width: 200px;
+  height: 100%;
+  outline: none;
+  border: 0;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px;
+}
+.send {
+  margin-top: 10px;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  background-color: rgb(180, 167, 248);
+  border-radius: 10px;
+}
+.send:hover {
+  background-color: rgb(145, 125, 246);
+}

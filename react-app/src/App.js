@@ -1,8 +1,9 @@
 import React from "react";
-import classes from './App.module.css'
-import Out from "./Out";
+import Meals from "./Components/Meals/Meals";
 const App = () => {
-  return <React.Fragment className={classes.p}>我是App</React.Fragment>
+  return <div>
+    <Meals/>
+  </div>
 }
 
 export default App

@@ -3,6 +3,7 @@
 let a:number;
 a = 10;
 console.log(a);
+let arr:string[] = ['1']
 function fn(a:number,b:number):number {
   return a + b
 }
